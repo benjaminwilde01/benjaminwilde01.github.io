@@ -52,6 +52,7 @@ const generateAlphabetButtons = () => {
 
 // ******       UPDATE SECRET WORD FUNCTION     *******
 const updateSecretWord = (ev) => {
+    checkWinningCondition()
     const secretWordButton = document.querySelectorAll('.displayed')
     // INDEX OF
     const splitRandomWordGeneration = randomWordGeneration.split('')
@@ -59,7 +60,7 @@ const updateSecretWord = (ev) => {
     if (result === -1) {
         remainingIncorrectGuesses--
         h3.innerText = `Guesses remaining: ${remainingIncorrectGuesses}`
-        console.log(remainingIncorrectGuesses)
+        // console.log(remainingIncorrectGuesses)
     }
         // FOR LOOP
         for (let i = 0; i < randomWordGeneration.length; i++) {
@@ -84,6 +85,12 @@ const showSecretWord = () => {
 }
 
 // check to determine winner function
+const checkWinningCondition = () => {
+     if (remainingIncorrectGuesses === 0) {
+         alert("You are out of guesses and have lost")
+     
+    }
+}
 
 showSecretWord()
 
