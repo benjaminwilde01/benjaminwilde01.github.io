@@ -26,7 +26,11 @@ const guessesRemaining = document.getElementById('guesses-remaining')
 // Ul for letter buttons
 const letters = document.getElementById('letters')
 
+// remaining incorrect guesses counter
+let remainingIncorrectGuesses = 6
+const h3 = document.createElement('h3')
 
+intro.appendChild(h3)
 
 // *****        GENERATE ALPHABET BUTTONS FUNCTION      ******
 
@@ -38,8 +42,7 @@ const generateAlphabetButtons = () => {
         alphabetButtons.setAttribute('class', 'alphabet')
         alphabetButtons.innerHTML = alphabetArray[i]
         letterButtons.appendChild(alphabetButtons)
-        
-             
+                
     }
     // adding event listener to each letter button
     const buttonsListener = document.querySelectorAll('.alphabet')
@@ -50,17 +53,24 @@ const generateAlphabetButtons = () => {
 // ******       UPDATE SECRET WORD FUNCTION     *******
 const updateSecretWord = (ev) => {
     const secretWordButton = document.querySelectorAll('.displayed')
+    // INDEX OF
+    const splitRandomWordGeneration = randomWordGeneration.split('')
+    const result = splitRandomWordGeneration.indexOf(ev.target.innerText)
+    if (result === -1) {
+        remainingIncorrectGuesses--
+        h3.innerText = `Guesses remaining: ${remainingIncorrectGuesses}`
+        console.log(remainingIncorrectGuesses)
+    }
+        // FOR LOOP
         for (let i = 0; i < randomWordGeneration.length; i++) {
             
             if (ev.target.innerText === randomWordGeneration[i]) {
                secretWordButton[i].innerText = ev.target.innerText
             }
-        }       
+        }
     }
-    
 
-
-//      *********   DISPLAY HIDDEN SECRET WORD FUNCTION
+//      *********   DISPLAY HIDDEN SECRET WORD FUNCTION     ******
 // inspired by https://www.youtube.com/watch?v=XP8kR64KD9o&ab_channel=jinx30
 // get buttons displayed with _ based on number or letters in randomly generated word
 const showSecretWord = () => {
@@ -70,10 +80,10 @@ const showSecretWord = () => {
         secretWordButton.setAttribute('id', letter)
         secretWordButton.innerText = "_"
         secretWord.appendChild(secretWordButton)   
-    }
-    
+    }   
 }
 
+// check to determine winner function
 
 showSecretWord()
 
