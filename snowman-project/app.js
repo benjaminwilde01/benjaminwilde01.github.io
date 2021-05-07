@@ -50,11 +50,10 @@ const generateAlphabetButtons = () => {
 // ******       UPDATE SECRET WORD FUNCTION     *******
 const updateSecretWord = (ev) => {
     const secretWordButton = document.querySelectorAll('.displayed')
-    console.log(secretWordButton)
         for (let i = 0; i < randomWordGeneration.length; i++) {
             
             if (ev.target.innerText === randomWordGeneration[i]) {
-               secretWordButton.innerText = randomWordGeneration[i]
+               secretWordButton[i].innerText = ev.target.innerText
             }
         }       
     }
@@ -68,10 +67,11 @@ const showSecretWord = () => {
     for (let letter of randomWordGeneration) {
         let secretWordButton = document.createElement('button')
         secretWordButton.classList.add('displayed')
+        secretWordButton.setAttribute('id', letter)
         secretWordButton.innerText = "_"
-        secretWord.appendChild(secretWordButton)
-        
+        secretWord.appendChild(secretWordButton)   
     }
+    
 }
 
 
