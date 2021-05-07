@@ -26,27 +26,54 @@ const guessesRemaining = document.getElementById('guesses-remaining')
 // Ul for letter buttons
 const letters = document.getElementById('letters')
 
-// Generate buttons for alphabet
+
+
+// *****        GENERATE ALPHABET BUTTONS FUNCTION      ******
+
 const generateAlphabetButtons = () => {
 
     // loop to iterate through alphabet and apply attributes and create element
     for (i = 0; i < alphabetArray.length; i++) {
-        const listItems = document.createElement('button')
-        listItems.setAttribute('class', 'alphabet')
-        listItems.innerHTML = alphabetArray[i]
-        letterButtons.appendChild(listItems)     
+        const alphabetButtons = document.createElement('button')
+        alphabetButtons.setAttribute('class', 'alphabet')
+        alphabetButtons.innerHTML = alphabetArray[i]
+        letterButtons.appendChild(alphabetButtons)
+        
+             
     }
+    // adding event listener to each letter button
+    const buttonsListener = document.querySelectorAll('.alphabet')
+        buttonsListener.forEach((element) => element.addEventListener('click', updateSecretWord))
 }
+
+
+// ******       UPDATE SECRET WORD FUNCTION     *******
+const updateSecretWord = (ev) => {
+    const secretWordButton = document.querySelectorAll('.displayed')
+    console.log(secretWordButton)
+        for (let i = 0; i < randomWordGeneration.length; i++) {
+            
+            if (ev.target.innerText === randomWordGeneration[i]) {
+               secretWordButton.innerText = randomWordGeneration[i]
+            }
+        }       
+    }
+    
+
+
+//      *********   DISPLAY HIDDEN SECRET WORD FUNCTION
 // inspired by https://www.youtube.com/watch?v=XP8kR64KD9o&ab_channel=jinx30
 // get buttons displayed with _ based on number or letters in randomly generated word
 const showSecretWord = () => {
     for (let letter of randomWordGeneration) {
         let secretWordButton = document.createElement('button')
         secretWordButton.classList.add('displayed')
-        secretWordButton.innerText = '_'
+        secretWordButton.innerText = "_"
         secretWord.appendChild(secretWordButton)
+        
     }
 }
+
 
 showSecretWord()
 
