@@ -1,3 +1,45 @@
-* {
-    
+body {
+    background-image: url('/nfl-image.jpeg') ;
+    background-repeat: no-repeat;
+}
+
+#intro {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#letter-buttons, #secret-word {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 25px;
+    color: yellow;
+}
+
+.alphabet, .displayed {
+    font-size: 30px;
+    background-color: yellow;
+    color: black;
+    margin-left: 5px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.alphabet:hover {
+    font-size: 35px;
 }
