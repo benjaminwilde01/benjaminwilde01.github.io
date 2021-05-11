@@ -2,7 +2,7 @@
 const alphabetArray =["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
 // array of words to be randomly selected
-const wordsArray = ['cowboys', 'falcons', 'giants']
+const wordsArray = ['cowboys', 'falcons', 'giants', 'eagles', 'ravens', 'patriots', 'dolphins']
 
 // array for random word to be pushed into
 let answerArray = []
@@ -13,6 +13,8 @@ let randomWordGeneration = wordsArray[Math.floor(Math.random() * wordsArray.leng
 
 // getting elements
 const intro = document.getElementById('intro')
+
+const container = document.querySelector('.container')
 
 //letters to choose from
 const letterButtons = document.getElementById('letter-buttons')
@@ -31,13 +33,29 @@ const letters = document.getElementById('letters')
 let lettersGuessedCorrectly = []
 
 // remaining incorrect guesses counter
-let remainingIncorrectGuesses = 6
+let remainingIncorrectGuesses = 7
 const h3 = document.createElement('h3')
 intro.appendChild(h3)
+console.log(remainingIncorrectGuesses)
+
+// start button creation
+const startButton = document.createElement('button')
+    startButton.innerText = 'Start'
+    startButton.setAttribute('id', 'start-btn')
+    intro.appendChild(startButton)
+
+// ****         START FUNCTION      ****
+const beginGame = () => {
+    startButton.addEventListener('click', generateAlphabetButtons)
+    startButton.addEventListener('click', updateSecretWord)
+    startButton.addEventListener('click', showSecretWord)
+    startButton.addEventListener('click', removeBtn)
+
+}
+
 
 // *****        GENERATE ALPHABET BUTTONS FUNCTION      ******
 const generateAlphabetButtons = () => {
-
     // loop to iterate through alphabet and apply attributes and create element
     for (i = 0; i < alphabetArray.length; i++) {
         const alphabetButtons = document.createElement('button')
@@ -50,7 +68,11 @@ const generateAlphabetButtons = () => {
     const buttonsListener = document.querySelectorAll('.alphabet')
         buttonsListener.forEach((element) => element.addEventListener('click', updateSecretWord))
         buttonsListener.forEach((element) => element.addEventListener('click', changeClass))
+    
+    
 }
+
+
 
 
 // ******       UPDATE SECRET WORD FUNCTION     *******
@@ -62,7 +84,7 @@ const updateSecretWord = (ev) => {
     const result = splitRandomWordGeneration.indexOf(ev.target.innerText)
     if (result === -1) {
         remainingIncorrectGuesses--
-        h3.innerText = `Guesses remaining: ${remainingIncorrectGuesses}`
+        h3.innerText = `Incorrect guesses remaining: ${remainingIncorrectGuesses}`
         // console.log(remainingIncorrectGuesses)
     }
         // FOR LOOP
@@ -95,8 +117,10 @@ const checkWinningCondition = () => {
     
      if (remainingIncorrectGuesses === 0) {
          alert("You are out of guesses and have lost")
+        remainingIncorrectGuesses++
     } else if (lettersGuessedCorrectly.length === randomWordGeneration.length -1 && remainingIncorrectGuesses > 0) {
-        alert('Congratulations, you have won!')
+        alert('Congratulations, you won')
+        
     }
 }
 
@@ -105,10 +129,12 @@ const changeClass = (ev) => {
     ev.target.style.display = "none"
 }
 
+//  ****        FUNCTION TO REMOVE START BUTTON ONCE CLICKED    ****
+const removeBtn = () => {
+    startButton.style.display = "none"
+}
 
 
-showSecretWord()
 
-generateAlphabetButtons()
 
-////////// testing new branch
+beginGame()
