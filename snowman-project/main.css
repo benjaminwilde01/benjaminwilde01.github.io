@@ -3,12 +3,16 @@ body {
     background-repeat: no-repeat;
 }
 
+
+
 #intro {
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    /*  got text border from https://forum.freecodecamp.org/t/border-on-each-letter/313357 */
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 #letter-buttons, #secret-word {
@@ -30,7 +34,7 @@ h3 {
     color: yellow;
 }
 
-.alphabet, .displayed {
+.alphabet, .displayed, #start-btn {
     font-size: 30px;
     background-color: yellow;
     color: black;
@@ -41,7 +45,26 @@ h3 {
 }
 
 .alphabet:hover {
-    font-size: 35px;
+    transform: rotate(6deg);
+}
+
+
+
+.no-display {
+    background:linear-gradient(to right, black, navy );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+    border: 6px solid yellow;
+    border-radius: 25px;
+    /* display: none; */
+}
+
+.no-display h1 {
+    color: white;
+    margin-bottom: 20px;
 }
 
 .winner-alert {
@@ -68,5 +91,6 @@ h3 {
     background: white;
     border: 2px solid black;
     border-radius: 10px;
+    cursor: pointer;
 }
 
