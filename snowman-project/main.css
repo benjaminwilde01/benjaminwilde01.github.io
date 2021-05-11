@@ -3,12 +3,16 @@ body {
     background-repeat: no-repeat;
 }
 
+
+
 #intro {
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    /*  got text border from https://forum.freecodecamp.org/t/border-on-each-letter/313357 */
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 #letter-buttons, #secret-word {
@@ -30,7 +34,7 @@ h3 {
     color: yellow;
 }
 
-.alphabet, .displayed {
+.alphabet, .displayed, #start-btn {
     font-size: 30px;
     background-color: yellow;
     color: black;
@@ -41,5 +45,7 @@ h3 {
 }
 
 .alphabet:hover {
-    font-size: 35px;
+    transform: rotate(6deg);
 }
+
+
