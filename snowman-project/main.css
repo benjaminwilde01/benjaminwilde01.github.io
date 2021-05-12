@@ -49,3 +49,48 @@ h3 {
 }
 
 
+
+.no-display {
+    background:linear-gradient(to right, black, navy );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+    border: 6px solid yellow;
+    border-radius: 25px;
+    /* display: none; */
+}
+
+.no-display h1 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.winner-alert {
+    background:linear-gradient(to right, black, navy );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+    border: 6px solid yellow;
+    border-radius: 25px;
+    display: none;
+}
+
+.winner-alert h1 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.play-again {
+    padding: 15px;
+    font-size: 20px;
+    margin-bottom: 5px;
+    background: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+

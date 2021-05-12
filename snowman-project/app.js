@@ -14,6 +14,13 @@ let randomWordGeneration = wordsArray[Math.floor(Math.random() * wordsArray.leng
 // getting elements
 const intro = document.getElementById('intro')
 
+const winnerAlert = document.querySelector('.no-display')
+console.log(winnerAlert)
+
+const playAgain = document.querySelector('.play-again')
+console.log(playAgain)
+
+
 const container = document.querySelector('.container')
 
 //letters to choose from
@@ -119,8 +126,10 @@ const checkWinningCondition = () => {
          alert("You are out of guesses and have lost")
         remainingIncorrectGuesses++
     } else if (lettersGuessedCorrectly.length === randomWordGeneration.length -1 && remainingIncorrectGuesses > 0) {
-        alert('Congratulations, you won')
-        
+        // alert('Congratulations, you won')
+        winnerAlert.classList.toggle('winner-alert')
+        playAgain.addEventListener('click', reload)
+
     }
 }
 
@@ -134,7 +143,10 @@ const removeBtn = () => {
     startButton.style.display = "none"
 }
 
-
+//  ****    FUNCTION TO RESTART GAME    ****
+const reload = () => {
+    location.reload()
+}
 
 
 beginGame()
