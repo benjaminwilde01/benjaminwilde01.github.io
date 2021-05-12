@@ -15,10 +15,10 @@ let randomWordGeneration = wordsArray[Math.floor(Math.random() * wordsArray.leng
 const intro = document.getElementById('intro')
 
 const winnerAlert = document.querySelector('.no-display')
-console.log(winnerAlert)
 
 const playAgain = document.querySelector('.play-again')
-console.log(playAgain)
+
+const changeToLost = document.querySelector('.changed-to-lost')
 
 
 const container = document.querySelector('.container')
@@ -43,7 +43,6 @@ let lettersGuessedCorrectly = []
 let remainingIncorrectGuesses = 7
 const h3 = document.createElement('h3')
 intro.appendChild(h3)
-console.log(remainingIncorrectGuesses)
 
 // start button creation
 const startButton = document.createElement('button')
@@ -75,11 +74,7 @@ const generateAlphabetButtons = () => {
     const buttonsListener = document.querySelectorAll('.alphabet')
         buttonsListener.forEach((element) => element.addEventListener('click', updateSecretWord))
         buttonsListener.forEach((element) => element.addEventListener('click', changeClass))
-    
-    
 }
-
-
 
 
 // ******       UPDATE SECRET WORD FUNCTION     *******
@@ -92,8 +87,8 @@ const updateSecretWord = (ev) => {
     if (result === -1) {
         remainingIncorrectGuesses--
         h3.innerText = `Incorrect guesses remaining: ${remainingIncorrectGuesses}`
-        // console.log(remainingIncorrectGuesses)
     }
+
         // FOR LOOP
         for (let i = 0; i < randomWordGeneration.length; i++) {
             
@@ -103,6 +98,7 @@ const updateSecretWord = (ev) => {
             }
         }
     }
+
 
 //      *********   DISPLAY HIDDEN SECRET WORD FUNCTION     ******
 // inspired by https://www.youtube.com/watch?v=XP8kR64KD9o&ab_channel=jinx30
@@ -117,31 +113,35 @@ const showSecretWord = () => {
     }   
 }
 
+
 //      ***** CHECK WINNER FUNCTION     *****
 const checkWinningCondition = () => {
     const secretWordButton = document.querySelectorAll('.displayed')
-    // console.log(secretWordButton)
-    
-     if (remainingIncorrectGuesses === 0) {
-         alert("You are out of guesses and have lost")
-        remainingIncorrectGuesses++
+         if (remainingIncorrectGuesses === 1) {
+        changeToLost.innerText = 'Sorry, you lost.'
+        winnerAlert.classList.toggle('no-display')
+        playAgain.addEventListener('click', reload)
+
+        // remainingIncorrectGuesses++
     } else if (lettersGuessedCorrectly.length === randomWordGeneration.length -1 && remainingIncorrectGuesses > 0) {
-        // alert('Congratulations, you won')
-        winnerAlert.classList.toggle('winner-alert')
+        winnerAlert.classList.toggle('no-display')
         playAgain.addEventListener('click', reload)
 
     }
 }
+
 
 //      ******   CHANGE CLASS TO REMOVE LETTER AFTER SELECTED  ****
 const changeClass = (ev) => {
     ev.target.style.display = "none"
 }
 
+
 //  ****        FUNCTION TO REMOVE START BUTTON ONCE CLICKED    ****
 const removeBtn = () => {
     startButton.style.display = "none"
 }
+
 
 //  ****    FUNCTION TO RESTART GAME    ****
 const reload = () => {
