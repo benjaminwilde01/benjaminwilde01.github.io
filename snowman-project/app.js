@@ -20,6 +20,7 @@ console.log(winnerAlert)
 const playAgain = document.querySelector('.play-again')
 console.log(playAgain)
 
+
 const container = document.querySelector('.container')
 
 //letters to choose from
@@ -128,6 +129,7 @@ const checkWinningCondition = () => {
         // alert('Congratulations, you won')
         winnerAlert.classList.toggle('winner-alert')
         playAgain.addEventListener('click', reload)
+
     }
 }
 
