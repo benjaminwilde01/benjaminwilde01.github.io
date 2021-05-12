@@ -27,6 +27,7 @@ h1 {
 
 h2 {
     font-size: 30px;
+    justify-content: center;
 }
 
 h3 {
@@ -50,7 +51,7 @@ h3 {
 
 
 
-.no-display {
+.winner-alert {
     background:linear-gradient(to right, black, navy );
     display: flex;
     flex-direction: column;
@@ -62,12 +63,12 @@ h3 {
     /* display: none; */
 }
 
-.no-display h1 {
+.winner-alert h1 {
     color: white;
     margin-bottom: 20px;
 }
 
-.winner-alert {
+.no-display {
     background:linear-gradient(to right, black, navy );
     display: flex;
     flex-direction: column;
@@ -79,7 +80,7 @@ h3 {
     display: none;
 }
 
-.winner-alert h1 {
+.no-display h1 {
     color: white;
     margin-bottom: 20px;
 }
