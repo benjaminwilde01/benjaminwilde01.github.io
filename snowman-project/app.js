@@ -20,6 +20,7 @@ const playAgain = document.querySelector('.play-again')
 
 const changeToLost = document.querySelector('.changed-to-lost')
 
+
 const container = document.querySelector('.container')
 
 //letters to choose from
@@ -125,6 +126,7 @@ const checkWinningCondition = () => {
     } else if (lettersGuessedCorrectly.length === randomWordGeneration.length -1 && remainingIncorrectGuesses > 0) {
         winnerAlert.classList.toggle('no-display')
         playAgain.addEventListener('click', reload)
+
     }
 }
 
