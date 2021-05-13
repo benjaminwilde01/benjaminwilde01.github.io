@@ -3,8 +3,8 @@
 # Snowman Project
 
 ## Links:
-- GitHub: 
-- Project: 
+- GitHub: https://github.com/benjaminwilde01/benjaminwilde01.github.io
+- Project: https://benjaminwilde01.github.io/snowman-project/
 
 ## Overview
 
