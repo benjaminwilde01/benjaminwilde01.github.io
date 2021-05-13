@@ -3,8 +3,6 @@ body {
     background-repeat: no-repeat;
 }
 
-
-
 #intro {
     color: white;
     display: flex;
@@ -48,8 +46,6 @@ h3 {
 .alphabet:hover {
     transform: rotate(6deg);
 }
-
-
 
 .winner-alert {
     background:linear-gradient(to right, black, navy );

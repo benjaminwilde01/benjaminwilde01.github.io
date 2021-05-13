@@ -1,3 +1,12 @@
+/*
+[] Player must guess secret word that is randomly generated
+[] Show the secretword as a series of buttons with '_' as the inner text
+[] Player has 6 incorrect guesses available
+[] Show alphabet with each letter displaying in its own button
+[] If the selected letter exists in the secret word, then the letter is displayed
+[] If the selected letter does not exist in the secret word, then deduct from remaining incorrect guesses
+*/
+
 // alphabet array
 const alphabetArray =["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
@@ -6,7 +15,6 @@ const wordsArray = ['cowboys', 'falcons', 'giants', 'eagles', 'ravens', 'patriot
 
 // array for random word to be pushed into
 let answerArray = []
-
 
 // random word selector
 let randomWordGeneration = wordsArray[Math.floor(Math.random() * wordsArray.length)]
@@ -19,7 +27,6 @@ const winnerAlert = document.querySelector('.no-display')
 const playAgain = document.querySelector('.play-again')
 
 const changeToLost = document.querySelector('.changed-to-lost')
-
 
 const container = document.querySelector('.container')
 
