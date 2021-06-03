@@ -56,6 +56,7 @@ h3 {
     margin: auto;
     border: 6px solid yellow;
     border-radius: 25px;
+    justify-content: center;
     /* display: none; */
 }
 
@@ -67,6 +68,7 @@ h3 {
 .no-display {
     background:linear-gradient(to right, black, navy );
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     width: 60%;
@@ -77,6 +79,7 @@ h3 {
 }
 
 .no-display h1 {
+    display: flex;
     color: white;
     margin-bottom: 20px;
 }
@@ -91,3 +94,24 @@ h3 {
     cursor: pointer;
 }
 
+@media only screen and (max-width: 1100px) {
+    body {
+        text-align: center;
+    }
+    #letter-buttons {
+      width: 90%;
+      flex-wrap: wrap;
+      margin: auto;
+    }
+    
+    .winner-alert {
+        width: 90%;
+        flex-wrap: wrap;
+    }
+
+    .changed-to-lost {
+        text-align: center;
+        font-size: 2rem;
+        margin: auto;
+    }
+  }
