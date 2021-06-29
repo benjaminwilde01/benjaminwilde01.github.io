@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid {
+    width: 100%;
+}
+
+.navbar {
+    width: 100%;
+}
+
+.jumbotron {
+    margin-bottom: 0px;
+}
+
+.headshot {
+    width: 20%;
+    border-radius: 32px;
+}
