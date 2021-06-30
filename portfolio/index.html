@@ -15,7 +15,7 @@
 
 </head>
 <body>
-    <div class="container-fluid p-0"></div>
+    <div class="main d-flex container-fluid p-0"></div>
         
         <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
 
@@ -45,94 +45,121 @@
             </div>
             
         </nav>
-        <div class="header jumbotron">
-            <img class="headshot img-fluid" src="https://i.ibb.co/wpBphW6/IMG-5333.png" alt="headshot" />
-            <h1>Hi, I'm Benjamin. Welcome to my portfolio.</h1>
+        <div class="d-flex header jumbotron" style="width: 90%;">
+            <img class="d-flex headshot img-responsive" src="https://i.ibb.co/wpBphW6/IMG-5333.png" alt="headshot" />
+            <h1 class="intro">Hi, I'm Benjamin. Welcome to my portfolio.</h1>
         </div>
-        <div class="main">
-            <div class="projects jumbotron">
+        
+        <div class="d-flex body" style="width: 90%;">
+            <div class="d-flex projects jumbotron card" style="width: 100%;">
                 <h1 class="display-4">Projects</h1>
-                <hr class="my-4">
-                <div class="row">
-                    <div class="col">
-                        <h5>Application Tracking</h5>
-                        <p>A full-stack CRUD app that allows users to add, edit, and delete job applications submitted.</p> 
-                        <a href="https://github.com/benjaminwilde01/application-logger">Link to Github</a>
-                        <a href="https://application-log.herokuapp.com/">Link to site</a>
-                    </div>
-                    <div class="col">
-                        <h5>Crypto Log</h5>
-                        <p>A full-stack CRUD React app that allows users to maintain a log of all cryptocurrency buy/sell transactions on exchanges that they transact on.</p>
-                        <a href="https://github.com/benjaminwilde01/cryptolog_frontend">Link to Github</a>
-                        <a href="https://cryptolog-frontend.herokuapp.com/">Link to site</a>
-                    </div>
-                    <div class="col">
-                        <h5>Snowman Game</h5>
-                        <p>A javascript word guessing game.</p> 
-                        <a href="https://github.com/benjaminwilde01/benjaminwilde01.github.io/tree/main/snowman-project">Link to Github</a>
-                        <a href="https://benjaminwilde01.github.io/snowman-project/">Link to site</a>
-                    </div>
-                </div>
+                <div class="d-flex cards card-deck">
+                    <div class="row justify-content-md-center">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title centered-text">Application Tracking</h5>
+                                    <p class="card-text">A full-stack CRUD app that allows users to add, edit, and delete job applications submitted.</p> 
+                                    <div class="buttons">
+                                        <button class="project-btn btn btn-dark"><a href="https://github.com/benjaminwilde01/application-logger">Link To GitHub</a></button>
+                                        <button class="project-btn btn btn-dark"><a href="https://application-log.herokuapp.com/">Link To Site</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title centered-text">Crypto Log</h5>
+                                    <p class="card-text">A full-stack CRUD React app that allows users to maintain a log of all cryptocurrency buy/sell transactions on exchanges that they transact on.</p>
+                                    <div class="buttons">
+                                        <button class="project-btn btn btn-dark"><a href="https://github.com/benjaminwilde01/cryptolog_frontend">Link To GitHub</a></button>
+                                        <button class="project-btn btn btn-dark"><a href="https://cryptolog-frontend.herokuapp.com/">Link To Site</a></button>
+                                    </div>   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title centered-text">Snowman Game</h5>
+                                    <p class="card-text">A javascript word guessing game.</p>
+                                    <div class="buttons">
+                                        <button class="project-btn btn btn-dark"><a href="https://github.com/benjaminwilde01/benjaminwilde01.github.io/tree/main/snowman-project">Link To GitHub</a></button>
+                                        <button class="project-btn btn btn-dark"><a href="https://benjaminwilde01.github.io/snowman-project/">Link To Site</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>      
+                </div> 
             </div>
-            <div class="skills jumbotron card">
+            <div class="skills jumbotron card" style="width: 100%;">
                 <h1 class="display-4">Skills</h1>
                 <hr class="my-4">
-                <div class="card-deck">
-                    <div class="card">
-                      <div class="card-body">
-                        <h5 class="card-title">CSS</h5>
-                        <img src="/images/css3-original-wordmark.svg" alt="">
-                      </div>
-                    </div>
-                    <div class="card">
-                      <div class="card-body">
-                        <h5 class="card-title">HTML</h5>
-                        <img src="/images/html5-original-wordmark.svg" alt="">
-                      </div>
-                    </div>
-                    <div class="card">
-                      <div class="card-body">
-                        <h5 class="card-title">JavaScript</h5>
-                        <img src="/images/javascript-original.svg" alt="">
-                      </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                          <h5 class="card-title">Python</h5>
-                          <img src="/images/python-original-wordmark.svg" alt="">
-                        </div>    
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                          <h5 class="card-title">React</h5>
-                          <img src="/images/react-original-wordmark.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                          <h5 class="card-title">NodeJS</h5>
-                          <img src="/images/nodejs-original-wordmark.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                          <h5 class="card-title">MongoDB</h5>
-                          <img src="/images/mongodb-original-wordmark.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                          <h5 class="card-title">Git</h5>
-                          <img src="/images/git-original-wordmark.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-              </div>
+                    <div class="card-deck">
+                        <div class="d-flex row skill-cards">
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                    <img src="/images/css3-original-wordmark.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <img src="/images/html5-original-wordmark.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <img src="/images/javascript-original.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <img src="/images/python-original-wordmark.svg" alt="">
+                                    </div>    
+                                </div>
+                            </div>   
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <img src="/images/react-original-wordmark.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <img src="/images/nodejs-original-wordmark.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <img src="/images/mongodb-original-wordmark.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <img src="/images/git-original-wordmark.svg" alt="">
+                                    </div>
+                                </div>
+                            </div> 
+                        </div> 
+                    </div> 
             </div>
-            <div class="resume jumbotron">
+            <div class="d-flex experience jumbotron">
                 <h1 class="display-4">Experience</h1>
-                <a href="https://docs.google.com/document/d/e/2PACX-1vTeGY0qWVlQSpxDHQ1iliQpI2ZgvVaUYCv6puVXM-5nTnV9jW1PIxCT_730iiX_w5HFWIU5w8dcYHte/pub">Full resume can be found here</a>
-
                 <hr class="my-4">
                 <div class="row">
                     <div class="col">
@@ -163,11 +190,11 @@
                         <p>Managed facility repairs and improvements to comply with state regulations</p>
                     </div>
                 </div>
+                <button class="project-btn btn btn-dark"><a href="https://docs.google.com/document/d/e/2PACX-1vTeGY0qWVlQSpxDHQ1iliQpI2ZgvVaUYCv6puVXM-5nTnV9jW1PIxCT_730iiX_w5HFWIU5w8dcYHte/pub">Full resume can be found here</a></button>
             </div>
-            <div class="find-me jumbotron">
+            <div class="find-me jumbotron" style="width: 100%;">
                 <h1 class="display-4">Find Me On</h1>
-                <hr class="my-4">
-                <div class="row" style="width: 50%;">
+                <div class="contact-images row">
                     <div class="col">
                       <div class="card-body" style="width: 100%;">
                             <a href="https://www.linkedin.com/in/benjamin-wilde/"><img src="/images/linkedin-original-wordmark.svg" alt=""></a>
@@ -180,9 +207,8 @@
                     </div>
                 </div>
             </div>
-            <div class="resume jumbotron">
+            <div class="get-in-touch jumbotron" style="width: 100%;">
                 <h1 class="display-4">Get In Touch</h1>
-                <hr class="my-4">
                 <div class="row">
                     <div class="col">
                         <h3>Email</h3>

@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-.container-fluid {
+.main {
     width: 100%;
 }
 
@@ -15,8 +15,90 @@
     margin-bottom: 0px;
 } */
 
+.intro {
+    padding-top: 60px;
+}
+
 .headshot {
     width: 20%;
+    justify-content: center;
     border-radius: 32px;
 }
 
+.header {
+    flex-direction: column;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+.body {
+    flex-direction: column;
+    /* text-align: center; */
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+.experience {
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+.skills {
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+.projects {
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.project-btn {
+    display: inline-block;
+    color: azure;
+    margin: 15px;
+}
+
+.project-btn a {
+    color: azure;
+    /* width: 20%; */
+}
+
+.centered-text {
+    text-align: center;
+}
+
+.find-me {
+    text-align: center;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+.contact-images {
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+.get-in-touch {
+    text-align: center;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
